@@ -13,22 +13,22 @@ rule_files:
 
 # A scrape configuration containing exactly one endpoint to scrape.
 scrape_configs:
-  - job_name: 'nodeexporter'
+  - job_name: 'local-nodeexporter'
     scrape_interval: 5s
     static_configs:
       - targets: ['nodeexporter:9100']
 
-  - job_name: 'cadvisor'
+  - job_name: 'local-cadvisor'
     scrape_interval: 5s
     static_configs:
       - targets: ['cadvisor:8080']
 
-  - job_name: 'prometheus'
+  - job_name: 'local-prometheus'
     scrape_interval: 10s
     static_configs:
       - targets: ['localhost:9090']
 
-  - job_name: 'pushgateway'
+  - job_name: 'local-pushgateway'
     scrape_interval: 10s
     honor_labels: true
     static_configs:
